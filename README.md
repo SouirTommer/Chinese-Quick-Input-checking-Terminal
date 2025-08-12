@@ -1,3 +1,6 @@
+<img width="744" height="410" alt="image" src="https://github.com/user-attachments/assets/f0f89b17-3abe-4af5-bd11-821218d5c2ae" />
+
+
 # Chinese-Quick-Input-checking-Terminal
 
 Chinese-Quick-Input-checking-Terminal is a terminal application for checking Cangjie/Quick input codes for Chinese characters.
