@@ -5,16 +5,14 @@ Chinese-Quick-Input-checking-Terminal is a terminal application for checking Can
 ### Features
 
 - Query Cangjie/Quick input codes for Chinese characters
-- Uses JSON mapping data from [chauchakching/chinese-quick-mapping](https://github.com/chauchakching/chinese-quick-mapping)
 - Lightweight and easy to use
 
 ### Installation
 
-1. Clone this repository:
-	```powershell
-	clone this repo
-	cd Chinese-Quick-Input-checking-Terminal
-	```
+```powershell
+clone this repo
+cd Chinese-Quick-Input-checking-Terminal
+```
 
 ### Usage
 
