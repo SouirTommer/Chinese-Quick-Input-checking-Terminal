@@ -101,22 +101,25 @@ def main():
             mode_str = 'quick' if mode == '1' else 'cheat'
             continue
         if keyword == '/train':
-            # Training mode: random pick from small_mapping
+            # Training mode: weighted random pick from small_mapping
             train_keys = list(small_mapping.keys())
             if not train_keys:
                 print('無可用字元進行訓練！')
                 continue
+            # Initialise the number of points for each word, initially 1.
+            score_dict = {k: 1 for k in train_keys}
             combo = 0
             while True:
-                # Pick a random character for training
-                ch = random.choice(train_keys)
+                # Weighted Score
+                total_score = sum(score_dict.values())
+                weights = [score_dict[k] / total_score for k in train_keys]
+                ch = random.choices(train_keys, weights=weights, k=1)[0]
                 print(f"請輸入「{ch}」的對應碼（輸入/exit 離開訓練）：")
                 user_input = input('> ').strip()
                 if user_input == '/exit':
                     print('離開訓練模式。')
                     break
                 # Get the correct answer according to mode
-                # mode 1: Quick (first/last code), mode 2: Cangjie (full code)
                 results_full = fuzzy_search(small_mapping, ch, mode='cheat')
                 if not results_full and full_mapping:
                     results_full = fuzzy_search(full_mapping, ch, mode='cheat')
@@ -144,9 +147,13 @@ def main():
                         print(f' Combo: {combo}')
                     else:
                         print()
+                    # Answer -1, lowest is 1
+                    score_dict[ch] = max(1, score_dict[ch] - 1)
                 else:
                     print(f'錯誤，正確答案是：{answer} ({roots})')
                     combo = 0
+                    # Wrong answer +1
+                    score_dict[ch] += 1
             continue
         if not zh_pattern.fullmatch(keyword):
             print('請只輸入中文！')
