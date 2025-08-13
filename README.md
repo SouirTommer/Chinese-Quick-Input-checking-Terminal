@@ -1,4 +1,4 @@
-<img width="50%" height="50%" alt="carbon" src="https://github.com/user-attachments/assets/cc04b122-1012-486b-aec1-de113f51ab53" />
+<img width="1586" height="1098" alt="carbon" src="https://github.com/user-attachments/assets/cc04b122-1012-486b-aec1-de113f51ab53" />
 
 # Chinese-Quick-Input-checking-Terminal
 
