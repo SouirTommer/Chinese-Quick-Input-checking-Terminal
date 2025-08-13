@@ -106,6 +106,7 @@ def main():
             if not train_keys:
                 print('無可用字元進行訓練！')
                 continue
+            combo = 0
             while True:
                 # Pick a random character for training
                 ch = random.choice(train_keys)
@@ -137,9 +138,15 @@ def main():
                 else:
                     roots = '--'
                 if user_input == answer:
-                    print('正確！')
+                    combo += 1
+                    print('正確！', end='')
+                    if combo > 1:
+                        print(f' Combo: {combo}')
+                    else:
+                        print()
                 else:
                     print(f'錯誤，正確答案是：{answer} ({roots})')
+                    combo = 0
             continue
         if not zh_pattern.fullmatch(keyword):
             print('請只輸入中文！')
