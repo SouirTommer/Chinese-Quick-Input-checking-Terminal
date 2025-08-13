@@ -1,7 +1,4 @@
-<img width="744" height="410" alt="image" src="https://github.com/user-attachments/assets/f0f89b17-3abe-4af5-bd11-821218d5c2ae" />
-
-
-
+<img width="50%" height="50%" alt="carbon" src="https://github.com/user-attachments/assets/cc04b122-1012-486b-aec1-de113f51ab53" />
 
 # Chinese-Quick-Input-checking-Terminal
 
